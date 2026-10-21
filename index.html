@@ -20,7 +20,7 @@
 </head>
 <body>
   <header>
-    <h1>Campus 360 | Interactive Virtual Tour</h1>
+    <h1>Perpustakaan Gowa | Interactive Virtual Tour</h1>
     <p class="intro">Drag to look around. Click arrows to change locations; click info icons for explanations.</p>
   </header>
   <main><div id="panorama" aria-label="Interactive 360-degree campus tour"></div></main>
@@ -29,43 +29,88 @@
   <script>
     pannellum.viewer("panorama", {
       "default": {
-        "firstScene": "entrance",
+        "firstScene": "pintu_masuk",
         "sceneFadeDuration": 700,
         "autoLoad": true,
-        "hfov": 110,
-        "escapeHTML": true
+        "hfov": 100,
+        "escapeHTML": true,
+        "hotSpotDebug": false
       },
       "scenes": {
-        "entrance": {
-          "title": "Campus Entrance",
+        "pintu_masuk": {
+          "title": "Pintu Masuk",
           "type": "equirectangular",
-          "panorama": "images/entrance.jpg",
+          "panorama": "./images/pintu_masuk.jpeg",
           "yaw": 0,
           "hotSpots": [
-            {"pitch": -5, "yaw": 14, "type": "scene", "text": "Go to Classroom", "sceneId": "classroom"},
-            {"pitch": 10, "yaw": -50, "type": "info", "text": "Welcome to our virtual campus tour!"}
+            {"pitch": -1, "yaw": -87, "type": "scene", "text": "Go to Tempat Registrasi", "sceneId": "tempat_registrasi"},
+            {"pitch": -8, "yaw": -140, "type": "info", "text": "Welcome to our virtual Perpustakaan Gowa tour! Simpan tas di loker sebelum masuk."}
           ]
         },
-        "classroom": {
-          "title": "Classroom",
+        "tempat_registrasi": {
+          "title": "Tempat Registrasi",
           "type": "equirectangular",
-          "panorama": "images/classroom.jpg",
+          "panorama": "./images/tempat_registrasi.jpeg",
           "yaw": 0,
           "hotSpots": [
-            {"pitch": -6, "yaw": 30, "type": "scene", "text": "Go to Library", "sceneId": "library"},
-            {"pitch": -6, "yaw": -110, "type": "scene", "text": "Back to Entrance", "sceneId": "entrance"},
-            {"pitch": 8, "yaw": 3, "type": "info", "text": "Students learn and work together here."}
+            {"pitch": 2, "yaw": -106, "type": "scene", "text": "Go to Ruang Komputer", "sceneId": "ruang_komputer"},
+            {"pitch": 0, "yaw": -150, "type": "scene", "text": "Go to Area Baca Lesehan", "sceneId": "area_baca_lesehan"},
+            {"pitch": -3, "yaw": 172, "type": "scene", "text": "Back to Pintu Masuk", "sceneId": "pintu_masuk"},
+            {"pitch": -20, "yaw": 86, "type": "info", "text": "Pengunjung mengisi daftar hadir dan mencari buku lewat komputer OPAC di sini."}
           ]
         },
-        "library": {
-          "title": "Library",
+        "ruang_komputer": {
+          "title": "Ruang Komputer",
           "type": "equirectangular",
-          "panorama": "images/library.jpg",
+          "panorama": "./images/ruang_komputer.jpeg",
           "yaw": 0,
           "hotSpots": [
-            {"pitch": -7, "yaw": -36, "type": "scene", "text": "Back to Classroom", "sceneId": "classroom"},
-            {"pitch": -7, "yaw": 100, "type": "scene", "text": "Return to Entrance", "sceneId": "entrance"},
-            {"pitch": 9, "yaw": 5, "type": "info", "text": "Study resources and reading spaces."}
+            {"pitch": -1, "yaw": 72, "type": "scene", "text": "Back to Tempat Registrasi", "sceneId": "tempat_registrasi"},
+            {"pitch": -14, "yaw": 50, "type": "info", "text": "Komputer untuk mencari referensi dan mengerjakan tugas."}
+          ]
+        },
+        "area_baca_lesehan": {
+          "title": "Area Baca Lesehan",
+          "type": "equirectangular",
+          "panorama": "./images/area_baca_lesehan.jpeg",
+          "yaw": 0,
+          "hotSpots": [
+            {"pitch": 8, "yaw": 150, "type": "scene", "text": "Go to Teras Baca", "sceneId": "teras_baca"},
+            {"pitch": -7, "yaw": 79, "type": "scene", "text": "Back to Tempat Registrasi", "sceneId": "tempat_registrasi"},
+            {"pitch": 5, "yaw": -40, "type": "info", "text": "Area membaca santai, pengunjung bisa duduk lesehan di atas karpet sambil membaca koleksi buku."}
+          ]
+        },
+        "teras_baca": {
+          "title": "Teras Baca",
+          "type": "equirectangular",
+          "panorama": "./images/teras_baca.jpeg",
+          "yaw": 0,
+          "hotSpots": [
+            {"pitch": 3, "yaw": -106, "type": "scene", "text": "Go to Toilet", "sceneId": "toilet"},
+            {"pitch": 2, "yaw": -82, "type": "scene", "text": "Go to Ruang Edukasi Anak", "sceneId": "ruang_edukasi_anak"},
+            {"pitch": 3, "yaw": 120, "type": "scene", "text": "Back to Area Baca Lesehan", "sceneId": "area_baca_lesehan"},
+            {"pitch": -15, "yaw": 15, "type": "info", "text": "Teras baca dengan meja bundar untuk membaca dan berdiskusi."}
+          ]
+        },
+        "toilet": {
+          "title": "Toilet",
+          "type": "equirectangular",
+          "panorama": "./images/toilet.jpeg",
+          "yaw": 0,
+          "hotSpots": [
+            {"pitch": -3, "yaw": -62, "type": "scene", "text": "Back to Teras Baca", "sceneId": "teras_baca"},
+            {"pitch": -10, "yaw": 125, "type": "info", "text": "Toilet dan wastafel untuk pengunjung."}
+          ]
+        },
+        "ruang_edukasi_anak": {
+          "title": "Ruang Edukasi Anak",
+          "type": "equirectangular",
+          "panorama": "./images/ruang_edukasi_anak.jpeg",
+          "yaw": 0,
+          "hotSpots": [
+            {"pitch": -1, "yaw": -40, "type": "scene", "text": "Back to Teras Baca", "sceneId": "teras_baca"},
+            {"pitch": -8, "yaw": 132, "type": "info", "text": "Ruang edukasi khusus anak dengan buku cerita bergambar."},
+            {"pitch": 0, "yaw": 30, "type": "info", "text": "Rak Koleksi Lokal berisi buku sejarah dan budaya daerah."}
           ]
         }
       }
